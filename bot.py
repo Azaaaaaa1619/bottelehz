@@ -192,8 +192,17 @@ async def main():
 
 
 if __name__ == "__main__":
+    import asyncio
+
     try:
-        asyncio.run(main())
+        loop = asyncio.get_event_loop()
+        if loop.is_running():
+            print("🔁 Loop sudah berjalan, menjalankan langsung tanpa asyncio.run()")
+            loop.create_task(main())
+        else:
+            loop.run_until_complete(main())
     except (KeyboardInterrupt, SystemExit):
         print("🛑 Bot dimatikan secara manual.")
+
+
 
