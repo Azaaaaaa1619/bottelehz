@@ -10,7 +10,7 @@ from telegram.ext import (
 
 # ==================== KONFIGURASI DASAR ====================
 logging.basicConfig(level=logging.INFO)
-TOKEN = os.getenv("BOT_TOKEN", "MASUKKAN_TOKEN_BOT_KAMU_DI_SINI")
+TOKEN = os.getenv("BOT_TOKEN", "8316724268:AAFK_45LrEPum0Ub4qQYNONMy9zQ0hGSfVM")
 
 DATA_FILE = "data.json"
 UPLOAD_DIR = "uploads"
@@ -196,3 +196,4 @@ if __name__ == "__main__":
         asyncio.run(main())
     except (KeyboardInterrupt, SystemExit):
         print("🛑 Bot dimatikan secara manual.")
+
