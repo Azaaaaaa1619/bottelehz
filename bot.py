@@ -197,17 +197,7 @@ if __name__ == "__main__":
     print("🤖 Bot sedang berjalan 24 jam nonstop...")
 
     try:
-        # Buat event loop baru jika belum ada
-        try:
-            loop = asyncio.get_running_loop()
-        except RuntimeError:
-            loop = asyncio.new_event_loop()
-            asyncio.set_event_loop(loop)
-
-        # Jalankan bot di loop yang ada
-        loop.create_task(main())
-        loop.run_forever()
-
+        asyncio.run(main())
     except (KeyboardInterrupt, SystemExit):
         print("🛑 Bot dimatikan secara manual.")
 
