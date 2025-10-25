@@ -197,7 +197,7 @@ if __name__ == "__main__":
 
     print("🤖 Bot sedang berjalan 24 jam nonstop...")
 
-    # Perbaiki event loop agar tidak error di Railway
+    # Izinkan event loop dijalankan ulang tanpa error
     nest_asyncio.apply()
 
     try:
