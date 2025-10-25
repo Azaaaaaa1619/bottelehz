@@ -192,12 +192,17 @@ async def main():
 
 
 if __name__ == "__main__":
+    import nest_asyncio
     import asyncio
 
     print("🤖 Bot sedang berjalan 24 jam nonstop...")
 
+    # Perbaiki event loop agar tidak error di Railway
+    nest_asyncio.apply()
+
     try:
-        asyncio.run(main())
+        loop = asyncio.get_event_loop()
+        loop.run_until_complete(main())
     except (KeyboardInterrupt, SystemExit):
         print("🛑 Bot dimatikan secara manual.")
 
